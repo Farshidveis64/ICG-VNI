@@ -1,0 +1,60 @@
+# ────────────────────────────────────────────────────────────────────────────
+# ICG-VNI  —  Default Hyperparameter Configuration
+# Paper: "Inductive Vital Node Identification across Unseen Networks via
+#         Cross-Graph In-Context Learning"
+# ────────────────────────────────────────────────────────────────────────────
+
+seed: 42
+
+# ── Data ──────────────────────────────────────────────────────────────────
+data:
+  train_datasets:           # 15 training graphs
+    - facebook_ego
+    - twitter_ego
+    - github
+    - lastfm
+    - cora
+    - citeseer
+    - dblp
+    - ppi_yeast
+    - drug_drug
+    - celegans
+    - euroroad
+    - delaunay
+    - pgp
+    - ba_m2
+    - ba_m5
+  test_datasets:            # 5 held-out test graphs
+    - facebook
+    - pubmed
+    - ppi_human
+    - power_grid
+    - er_p001
+  sir_simulations: 1000     # Monte-Carlo runs per graph
+  beta_factor: 1.5          # β = beta_factor × β_threshold
+  sir_recover_prob: 1.0     # μ (recovery probability)
+  cache_dir: ./data/cache
+
+# ── Model ─────────────────────────────────────────────────────────────────
+model:
+  hidden_dim: 128           # node embedding dimension
+  num_encoder_layers: 3     # Graph Transformer layers (L)
+  num_heads: 4              # multi-head attention heads
+  rwpe_dim: 16              # random-walk positional encoding dim  (k steps)
+  dropout: 0.1
+  support_size: 20          # |S| support set nodes
+  support_sampling: kmeans  # kmeans | random
+
+# ── Training ──────────────────────────────────────────────────────────────
+training:
+  epochs: 100
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  batch_size: 1             # one graph per episode
+  episodes_per_epoch: 50
+  patience: 20              # early-stopping patience
+
+# ── Evaluation ────────────────────────────────────────────────────────────
+evaluation:
+  metrics: [kendall_tau, js_at_10, js_at_50, monotonicity]
+  seeds: [0, 1, 2, 3, 4]   # 5 runs for mean ± std

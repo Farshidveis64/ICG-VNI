@@ -1,0 +1,14 @@
+torch==2.2.0
+torch-geometric==2.5.0
+torch-scatter==2.1.2
+torch-sparse==0.6.18
+networkx==3.2.1
+numpy==1.26.4
+scipy==1.12.0
+scikit-learn==1.4.1
+matplotlib==3.8.3
+seaborn==0.13.2
+pandas==2.2.1
+tqdm==4.66.2
+PyYAML==6.0.1
+pytest==8.0.0
