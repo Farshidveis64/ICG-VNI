@@ -166,17 +166,6 @@ All parameters are in `configs/default.yaml`.
 
 ---
 
-## Citation
-
-```bibtex
-@article{Veisi2025ICGVNI,
-  author  = {Veisi, Farshid and Berahmand, Kamal and Taheri, Sona and Stone, Lewi and Jalili, Mahdi},
-  title   = {Inductive Vital Node Identification across Unseen Networks via Cross-Graph In-Context Learning},
-  journal = {Neural Networks},
-  year    = {2025},
-  doi     = {10.1016/j.neunet.2025.XXXXXX}
-}
-```
 
 ---
 
