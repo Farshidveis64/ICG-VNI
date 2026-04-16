@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 > **Paper:** *"Inductive Vital Node Identification across Unseen Networks via Cross-Graph In-Context Learning"*  
-> **Journal:** Neural Networks (Elsevier), 2025  
+> **Journal:** Neural Networks (Elsevier), 2026  
 > **Authors:** Farshid Veisi, Kamal Berahmand, Sona Taheri, Lewi Stone, Mahdi Jalili — RMIT University
 
 ---
